@@ -1,0 +1,99 @@
+[
+  {
+    "nombre": "hawaiana",
+    "ingredientes": [
+      "pinia",
+      "madera",
+      "queso",
+      "jamon"
+    ]
+  },
+  {
+    "nombre": "vegetariana",
+    "ingredientes": [
+      "queso",
+      "aceitunas",
+      "champiniones",
+      "madera",
+      "piedra"
+    ]
+  },
+  {
+    "nombre": "machas a la parmesana",
+    "ingredientes": [
+      "piedra",
+      "machas",
+      "madera",
+      "lata",
+      "jabon",
+      "queso",
+      "computador"
+    ]
+  },
+  {
+    "nombre": "pepperoni",
+    "ingredientes": [
+      "pepperoni",
+      "cuchillo",
+      "queso"
+    ]
+  },
+  {
+    "nombre": "pollo bbq",
+    "ingredientes": [
+      "cebolla",
+      "queso",
+      "jabon",
+      "madera",
+      "pollo bbq",
+      "cuchillo",
+      "lata",
+      "piedra"
+    ]
+  },
+  {
+    "nombre": "jamon palmito",
+    "ingredientes": [
+      "jamon",
+      "carbon",
+      "palmitos",
+      "queso",
+      "madera",
+      "computador"
+    ]
+  },
+  {
+    "nombre": "white",
+    "ingredientes": [
+      "hoja de afeitar",
+      "aceitunas",
+      "tomate",
+      "carbon",
+      "madera",
+      "lata",
+      "jabon"
+    ]
+  },
+  {
+    "nombre": "napolitana",
+    "ingredientes": [
+      "queso",
+      "hoja de afeitar",
+      "albahaca",
+      "tomate",
+      "lata",
+      "madera"
+    ]
+  },
+  {
+    "nombre": "queso",
+    "ingredientes": [
+      "queso",
+      "computador",
+      "queso",
+      "hoja de afeitar",
+      "jabon",
+      "piedra"
+    ]
+  }
+]
