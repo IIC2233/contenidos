@@ -22,7 +22,7 @@
 | 2      | 12/8 - 18/8 | Entorno de trabajo           |Actividad 0, jueves feriado|
 | 3      | 19/8 - 25/8 | Estructuras de datos         | Actividad 1             |
 | 4      | 26/8 - 01/9 | OOP Avanzado                 | Actividad 2             |
-| 5      | 02/9 - 08/9 | Iteradores                        | Experiencia 1           |
+| 5      | 02/9 - 08/9 | Modelación OOP e iterables   | Experiencia 1           |
 | 6      | 09/9 - 15/9 | Excepciones                  | Experiencia 2           |
 | 7      | 16/9 - 22/9 | -                            | Receso                  |
 | 8      | 23/9 - 29/9 | Programación Funcional       | Actividad 3             |
