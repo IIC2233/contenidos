@@ -1,8 +1,9 @@
-from functools import wraps
+from functools import reduce, wraps
 from threading import Thread
 from os import path
 import timeit
 import tracemalloc
+from typing import Generator
 
 
 
@@ -42,7 +43,7 @@ def timer_decorator(func):
         start = timeit.default_timer()
         result = func(*args, **kwargs)
         end = timeit.default_timer()
-        print(f"\nTiempo ejecución {func.__name__:<25} {end - start:.5f} segundos", end="")
+        print(f"\nTiempo ejecución {func.__name__.replace('test_', ''):<25} {(end - start) * 1000:6.2f} milisegundos", end="")
         return result
     return wrapper
 
@@ -53,12 +54,12 @@ def memory_decorator(func):
         tracemalloc.start()
         result = func(*args, **kwargs)
         _, memory_peak = tracemalloc.get_traced_memory()
-        memory_peak /= 2**20
-        print(f"\nUso memoria {func.__name__:<25}      {memory_peak:.2f} MB ", end="")
+        memory_peak /= 2**10
+        print(f"\nUso memoria {func.__name__.replace('test_', ''):<25}      {memory_peak:>6.2f} KB ", end="")
         tracemalloc.stop()
         return result
     return wrapper
 
 
-ruta_transacciones = path.join("data", "credit_card_transactions.csv")
-ruta_estados = path.join("data", "states.csv")
+ruta_archivo = path.join("..", "data", "lenguas_extintas.csv")
+N = 2309

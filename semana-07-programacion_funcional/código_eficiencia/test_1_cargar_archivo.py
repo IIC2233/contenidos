@@ -1,28 +1,27 @@
+from functools import reduce
 import unittest
 from typing import Generator
 
-from utils import timeout, timer_decorator, ruta_transacciones
+from utils import timeout, timer_decorator, memory_decorator, ruta_archivo, N
 
 
 # --- Consultas a testear ---
 
 def cargar_archivo_generador() -> Generator:
-    with open(ruta_transacciones, encoding='utf-8') as file:
+    with open(ruta_archivo, encoding='utf-8') as file:
         for line in file:
             yield line.strip().split(',')
 
 def cargar_archivo_memoria() -> Generator:
-    with open(ruta_transacciones, encoding='utf-8') as file:
+    with open(ruta_archivo, encoding='utf-8') as file:
         for line in file.readlines():
             yield line.strip().split(',')
 
 
 # --- Función general para obtener datos desde las funciones a testear ---
 
-N = 100000
-
 def procesar_resultados(generador: Generator) -> list:
-    return [next(generador) for _ in range(N)]
+    return reduce(lambda x, _: x + 1, generador, 0)
 
 
 # --- Clase encargada de probar el código y hacer que tenga un tiempo máximo de ejecución ---
@@ -30,15 +29,15 @@ def procesar_resultados(generador: Generator) -> list:
 class TestCargarArchivo(unittest.TestCase):
 
     @timeout(60)
+    @memory_decorator
     @timer_decorator
-    def test_0_generador(self) -> None:
-        for _ in range(10):
-            data = procesar_resultados(cargar_archivo_generador())
-        self.assertEqual(len(data), N)
+    def test_cargar_archivo_generador(self) -> None:
+        len_data = procesar_resultados(cargar_archivo_generador())
+        self.assertEqual(len_data, N)
 
     @timeout(60)
+    @memory_decorator
     @timer_decorator
-    def test_1_memoria(self) -> None:
-        for _ in range(10):
-            data = procesar_resultados(cargar_archivo_memoria())
-        self.assertEqual(len(data), N)
+    def test_cargar_archivo_memoria(self) -> None:
+        len_data = procesar_resultados(cargar_archivo_memoria())
+        self.assertEqual(len_data, N)
