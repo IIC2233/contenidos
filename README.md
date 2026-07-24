@@ -18,22 +18,22 @@
 
 ### Desglose contenidos
 
-| Semana | Fechas        | Contenido                           | Detalle             |
-| ------ | --------------| ----------------------------------- | ------------------- |
-| 1      | 02/03 - 08/03 | Introducción                        | Cátedra: Bienvenida |
-| 2      | 09/03 - 15/03 | Entorno de trabajo                  | Actividad 1         |
-| 3      | 16/03 - 22/03 | Estructuras de datos (EDD)          | Actividad 2         |
-| 4      | 23/03 - 29/03 | OOP Avanzado                        | Actividad 3         |
-| 5      | 30/03 - 05/04 | -                                   |                     |
-| 6      | 06/04 - 12/04 | Excepciones, Iterables e Iteradores | Actividad 4         |
-| 7      | 13/04 - 19/04 | Programación funcional              | Experiencia 1       |
-| 8      | 20/04 - 26/04 | Threading                           | Actividad 5         |
-| 9      | 27/04 - 03/05 | Interfaz Gráfica 1                  | Experiencia 2       |
-| 10     | 04/05 - 10/05 | Serialización y Networking 1        | Actividad 6         |
-| 11     | 11/05 - 17/05 | Serialización y Networking 2        | Experiencia 3       |
-| 12     | 18/05 - 24/05 | -                                   | Receso              |
-| 13     | 25/05 - 31/05 | -                                   |                     |
-| 14     | 01/06 - 07/06 | Interfaces Gráficas 2               | Experiencia 4       |
-| 15     | 08/06 - 14/06 | Tópicos Avanzados 1                 | Actividad 7         |
-| 16     | 15/06 - 21/06 | Tópicos Avanzados 2                 | Actividad B         |
-| 17     | 22/06 - 28/06 | -                                   | Cátedra: Cierre     |
+| Semana | Fechas        | Contenido                           | Detalle               |
+| ------ | --------------| ----------------------------------- | --------------------- |
+| 1      | 03/08 - 09/08 | Introducción                        | Cátedra: Bienvenida   |
+| 2      | 10/08 - 16/08 | Entorno de trabajo                  | Actividad 1           |
+| 3      | 17/08 - 23/08 | Estructuras de datos (EDD)          | Actividad Diagnóstico |
+| 4      | 24/08 - 30/08 | OOP Avanzado                        | Actividad 2           |
+| 5      | 31/08 - 06/09 | Excepciones, Iterables e Iteradores | Actividad 3           |
+| 6      | 07/09 - 13/09 | -                                   | Interrogación 1       |
+| 7      | 14/09 - 20/09 | -                                   | Receso                |
+| 8      | 21/09 - 27/09 | Programación funcional              | Actividad 4           |
+| 9      | 28/09 - 04/10 | Threading                           | Actividad 5           |
+| 10     | 05/10 - 11/10 | Serialización y Networking 1        | Actividad 6           |
+| 11     | 12/10 - 18/10 | Serialización y Networking 2        | Actividad 7           |
+| 12     | 19/10 - 25/10 | -                                   | Interrogación 2       |
+| 13     | 26/10 - 01/11 | Interfaces Gráficas 1               | Actividad 8           |
+| 14     | 02/11 - 08/11 | Interfaces Gráficas 2               | Actividad 9           |
+| 15     | 09/11 - 15/11 | Tópicos Avanzados                   | Actividad 10          |
+| 16     | 16/11 - 22/11 | Cierre                              | Cátedra: Cierre       |
+| 17     | 23/11 - 29/11 | -                                   | Examen                |
