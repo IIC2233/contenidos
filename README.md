@@ -37,3 +37,13 @@
 | 15     | 09/11 - 15/11 | Tópicos Avanzados                   | Actividad 10          |
 | 16     | 16/11 - 22/11 | Cierre                              | Cátedra: Cierre       |
 | 17     | 23/11 - 29/11 | -                                   | Examen                |
+
+## Licencia
+
+Este repositorio contiene material del curso **Programación Avanzada** del **Departamento de Ciencia de la Computación** de la **Pontificia Universidad Católica de Chile**.
+
+El contenido se encuentra bajo la licencia **Creative Commons Atribución–NoComercial–SinDerivadas 4.0 Internacional (CC BY-NC-ND 4.0)**.
+
+Estos materiales se publican con fines exclusivamente educativos y como referencia para estudiantes. No está permitido utilizarlos con fines comerciales ni incorporarlos, total o parcialmente, en otros cursos, capacitaciones o materiales docentes sin la autorización expresa del autor.
+
+Para más información, consulte el archivo `LICENSE.md` o visite: https://creativecommons.org/licenses/by-nc-nd/4.0/deed.es
