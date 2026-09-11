@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <rect width="1200" height="520" fill="#f8fafc"/>
+  <style>.title{font:700 27px Arial;fill:#0f172a}.label{font:700 17px Arial;fill:#334155}.mono{font:18px 'Courier New',monospace;fill:#0f172a}.box{fill:white;stroke:#64748b;stroke-width:2}.start{fill:#dbeafe}.headers{fill:#fef3c7}.body{fill:#dcfce7}</style>
+  <text class="title" x="300" y="45" text-anchor="middle">Solicitud HTTP</text>
+  <text class="title" x="900" y="45" text-anchor="middle">Respuesta HTTP</text>
+
+  <rect class="box" x="45" y="75" width="510" height="350" rx="10"/>
+  <rect class="start" x="46" y="76" width="508" height="62" rx="9"/>
+  <rect class="headers" x="46" y="138" width="508" height="190"/>
+  <rect class="body" x="46" y="328" width="508" height="96" rx="0"/>
+  <text class="mono" x="70" y="114">GET /recursos/1 HTTP/1.1</text>
+  <text class="mono" x="70" y="178">Host: api.ejemplo.com</text>
+  <text class="mono" x="70" y="213">Accept: application/json</text>
+  <text class="mono" x="70" y="248">Accept-Encoding: gzip, br</text>
+  <text class="mono" x="70" y="283">User-Agent: mi-programa/1.0</text>
+  <text class="mono" x="70" y="374">(sin cuerpo)</text>
+  <text class="label" x="170" y="458" text-anchor="middle">línea inicial</text>
+  <text class="label" x="300" y="458" text-anchor="middle">headers</text>
+  <text class="label" x="430" y="458" text-anchor="middle">cuerpo opcional</text>
+
+  <rect class="box" x="645" y="75" width="510" height="350" rx="10"/>
+  <rect class="start" x="646" y="76" width="508" height="62" rx="9"/>
+  <rect class="headers" x="646" y="138" width="508" height="190"/>
+  <rect class="body" x="646" y="328" width="508" height="96"/>
+  <text class="mono" x="670" y="114">HTTP/1.1 200 OK</text>
+  <text class="mono" x="670" y="178">Content-Type: application/json</text>
+  <text class="mono" x="670" y="213">Content-Length: 27</text>
+  <text class="mono" x="670" y="248">Cache-Control: no-store</text>
+  <text class="mono" x="670" y="374">{"id": 1, "nombre": "Pepa"}</text>
+  <text class="label" x="770" y="458" text-anchor="middle">línea de estado</text>
+  <text class="label" x="900" y="458" text-anchor="middle">headers</text>
+  <text class="label" x="1030" y="458" text-anchor="middle">cuerpo opcional</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430">
+  <rect width="900" height="430" fill="#f8fafc"/>
+  <text x="450" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">Puertos convencionales de servicios</text>
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(50 80)"><rect width="180" height="120" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/><text x="90" y="55" text-anchor="middle" font-size="34" font-weight="700" fill="#1e3a8a">21</text><text x="90" y="91" text-anchor="middle" font-size="20" fill="#1e3a8a">FTP (control)</text></g>
+    <g transform="translate(255 80)"><rect width="180" height="120" rx="14" fill="#dcfce7" stroke="#16a34a" stroke-width="3"/><text x="90" y="55" text-anchor="middle" font-size="34" font-weight="700" fill="#14532d">22</text><text x="90" y="91" text-anchor="middle" font-size="20" fill="#14532d">SSH</text></g>
+    <g transform="translate(460 80)"><rect width="180" height="120" rx="14" fill="#fef3c7" stroke="#d97706" stroke-width="3"/><text x="90" y="55" text-anchor="middle" font-size="34" font-weight="700" fill="#78350f">53</text><text x="90" y="91" text-anchor="middle" font-size="20" fill="#78350f">DNS</text></g>
+    <g transform="translate(665 80)"><rect width="180" height="120" rx="14" fill="#fce7f3" stroke="#db2777" stroke-width="3"/><text x="90" y="55" text-anchor="middle" font-size="34" font-weight="700" fill="#831843">80</text><text x="90" y="91" text-anchor="middle" font-size="20" fill="#831843">HTTP</text></g>
+    <g transform="translate(50 230)"><rect width="180" height="120" rx="14" fill="#ede9fe" stroke="#7c3aed" stroke-width="3"/><text x="90" y="55" text-anchor="middle" font-size="34" font-weight="700" fill="#4c1d95">25</text><text x="90" y="91" text-anchor="middle" font-size="20" fill="#4c1d95">SMTP</text></g>
+    <g transform="translate(255 230)"><rect width="180" height="120" rx="14" fill="#cffafe" stroke="#0891b2" stroke-width="3"/><text x="90" y="55" text-anchor="middle" font-size="34" font-weight="700" fill="#164e63">110</text><text x="90" y="91" text-anchor="middle" font-size="20" fill="#164e63">POP3</text></g>
+    <g transform="translate(460 230)"><rect width="180" height="120" rx="14" fill="#ffedd5" stroke="#ea580c" stroke-width="3"/><text x="90" y="55" text-anchor="middle" font-size="34" font-weight="700" fill="#7c2d12">143</text><text x="90" y="91" text-anchor="middle" font-size="20" fill="#7c2d12">IMAP</text></g>
+    <g transform="translate(665 230)"><rect width="180" height="120" rx="14" fill="#d1fae5" stroke="#059669" stroke-width="3"/><text x="90" y="55" text-anchor="middle" font-size="34" font-weight="700" fill="#064e3b">443</text><text x="90" y="91" text-anchor="middle" font-size="20" fill="#064e3b">HTTPS</text></g>
+  </g>
+  <text x="450" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#475569">Los puertos son convenciones; el servicio debe estar configurado para escucharlos.</text>
+</svg>
