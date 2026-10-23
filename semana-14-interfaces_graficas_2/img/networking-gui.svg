@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="400" viewBox="0 0 820 400" font-family="DejaVu Sans, Arial, sans-serif">
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+  </defs>
+  <!-- Fondo propio: el diagrama se lee igual en temas claros y oscuros -->
+  <rect x="0" y="0" width="820" height="400" rx="12" fill="#ffffff"/>
+  <text x="24" y="36" font-size="18" font-weight="bold" fill="#111827">Cliente con interfaz gráfica: ¿quién hace qué?</text>
+
+  <!-- Servidor -->
+  <rect x="24" y="150" width="120" height="80" rx="8" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="84" y="186" font-size="15" font-weight="bold" fill="#111827" text-anchor="middle">Servidor</text>
+  <text x="84" y="206" font-size="12" fill="#374151" text-anchor="middle">(otro programa)</text>
+
+  <!-- Thread secundario -->
+  <rect x="190" y="56" width="250" height="130" rx="10" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+  <text x="206" y="80" font-size="14" font-weight="bold" fill="#7c2d12">Thread secundario</text>
+  <text x="206" y="106" font-size="13" font-family="DejaVu Sans Mono, monospace" fill="#111827">EscucharQThread.run()</text>
+  <text x="206" y="130" font-size="13" fill="#111827">while True:</text>
+  <text x="222" y="150" font-size="13" fill="#111827">recibir(socket)  ← bloquea</text>
+  <text x="222" y="170" font-size="13" fill="#111827">senal_mensaje.emit(...)</text>
+
+  <!-- Thread principal -->
+  <rect x="190" y="206" width="606" height="174" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="530" y="232" font-size="14" font-weight="bold" fill="#1e3a8a">Thread principal (event loop)</text>
+
+  <rect x="206" y="246" width="250" height="118" rx="6" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="222" y="270" font-size="14" font-weight="bold" fill="#111827">Logica (back-end)</text>
+  <text x="222" y="296" font-size="13" font-family="DejaVu Sans Mono, monospace" fill="#111827">procesar_mensaje()</text>
+  <text x="222" y="320" font-size="13" font-family="DejaVu Sans Mono, monospace" fill="#111827">mandar_comando()</text>
+  <text x="222" y="344" font-size="12" fill="#374151">enviar(socket) es rápido</text>
+
+  <rect x="530" y="246" width="250" height="118" rx="6" fill="#ffffff" stroke="#93c5fd"/>
+  <text x="546" y="270" font-size="14" font-weight="bold" fill="#111827">MainWindow (front-end)</text>
+  <text x="546" y="296" font-size="13" font-family="DejaVu Sans Mono, monospace" fill="#111827">actualizar_etiqueta()</text>
+  <text x="546" y="320" font-size="13" fill="#111827">botones → señales</text>
+  <text x="546" y="344" font-size="12" fill="#374151">nunca toca el socket</text>
+
+  <!-- Flechas -->
+  <g stroke="#374151" stroke-width="2" fill="none">
+    <!-- Servidor -> thread que escucha -->
+    <path d="M110,148 L110,121 L186,121" marker-end="url(#flecha)"/>
+    <!-- thread -> lógica (señal) -->
+    <line x1="330" y1="188" x2="330" y2="242" marker-end="url(#flecha)"/>
+    <!-- lógica -> front-end -->
+    <line x1="458" y1="290" x2="526" y2="290" marker-end="url(#flecha)"/>
+    <!-- front-end -> lógica -->
+    <line x1="528" y1="318" x2="460" y2="318" marker-end="url(#flecha)"/>
+    <!-- lógica -> servidor -->
+    <path d="M204,330 L60,330 L60,234" marker-end="url(#flecha)"/>
+  </g>
+  <g font-size="12" fill="#374151">
+    <text x="118" y="114">bytes</text>
+    <text x="338" y="222">señal (se encola)</text>
+    <text x="462" y="284">señal</text>
+    <text x="462" y="336">señal</text>
+    <text x="70" y="324">bytes</text>
+  </g>
+
+  <!-- Nota -->
+  <g font-size="13" fill="#374151">
+    <text x="470" y="80">Solo lo que bloquea (recv) va en</text>
+    <text x="470" y="100">otro thread. El resto vive en el</text>
+    <text x="470" y="120">thread principal, y las partes se</text>
+    <text x="470" y="140">comunican con señales.</text>
+  </g>
+</svg>

@@ -1,0 +1,81 @@
+import sys
+from time import sleep
+from PyQt6.QtCore import pyqtSignal, QThread
+from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QPushButton
+
+
+class MiThread(QThread):
+    """
+    Esta clase representa un thread personalizado que será utilizado durante
+    la ejecución de la GUI.
+    """
+
+    # Creamos una señal para manejar la respuesta del thread
+    senal_thread = pyqtSignal(str)
+
+    def __init__(self) -> None:
+        super().__init__()
+
+    def run(self) -> None:
+        for i in range(10):
+            sleep(0.5)
+            self.senal_thread.emit(str(i))
+
+        sleep(0.5)
+        self.senal_thread.emit("Status: QThread terminado")
+
+
+class MiVentana(QWidget):
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.mi_thread = None
+        self.init_gui()
+
+    def init_gui(self) -> None:
+        # Configuramos los widgets de la interfaz
+        self.label = QLabel("Status: esperando QThread", self)
+        self.boton = QPushButton("Ejecutar QThread", self)
+        self.boton.clicked.connect(self.ejecutar_thread)
+
+        self.label.setGeometry(10, 10, 230, 30)
+        self.boton.setGeometry(10, 50, 230, 30)
+
+        # Configuramos las propiedades de la ventana.
+        self.setWindowTitle("Ejemplo QThread")
+        self.setGeometry(50, 50, 250, 200)
+        self.show()
+
+    def ejecutar_thread(self) -> None:
+        """
+        Este método crea un thread cada vez que se presiona el botón en la
+        interfaz, si no hay otro corriendo. Como el thread tiene su propia
+        señal, basta con conectarla después de crearlo.
+        """
+        # Aquí debemos ocupar isRunning en lugar de is_alive
+        if self.mi_thread is None or not self.mi_thread.isRunning():
+            self.mi_thread = MiThread()
+            # Conectamos la señal del thread al método que maneja
+            self.mi_thread.senal_thread.connect(self.actualizar_label)
+            self.mi_thread.start()
+
+    def actualizar_label(self, texto: str) -> None:
+        """
+        Este método actualiza el label según los datos enviados desde el
+        thread a través del argumento texto. Para este ejemplo, el método
+        recibe un texto, pero podría también no recibir nada.
+        """
+        self.label.setText(texto)
+
+
+if __name__ == "__main__":
+
+    def hook(type_, value, traceback):
+        # Imprimimos el error con el hook original de Python. Al instalar
+        # nuestro propio sys.excepthook, PyQt no cierra el programa
+        sys.__excepthook__(type_, value, traceback)
+
+    sys.excepthook = hook
+    app = QApplication([])
+    ventana = MiVentana()
+    sys.exit(app.exec())

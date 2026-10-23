@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="390" viewBox="0 0 760 390" font-family="DejaVu Sans, Arial, sans-serif">
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+  </defs>
+  <!-- Fondo propio: el diagrama se lee igual en temas claros y oscuros -->
+  <rect x="0" y="0" width="760" height="390" rx="12" fill="#ffffff"/>
+  <text x="24" y="36" font-size="18" font-weight="bold" fill="#111827">El event loop vive en el thread principal</text>
+
+  <!-- Cola de eventos -->
+  <rect x="24" y="60" width="220" height="206" rx="8" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="134" y="86" font-size="15" font-weight="bold" fill="#111827" text-anchor="middle">Cola de eventos</text>
+  <g font-size="13" fill="#111827" text-anchor="middle">
+    <rect x="40" y="100" width="188" height="30" rx="5" fill="#ffffff" stroke="#9ca3af"/>
+    <text x="134" y="120">click en un botón</text>
+    <rect x="40" y="140" width="188" height="30" rx="5" fill="#ffffff" stroke="#9ca3af"/>
+    <text x="134" y="160">tecla presionada</text>
+    <rect x="40" y="180" width="188" height="30" rx="5" fill="#ffffff" stroke="#9ca3af"/>
+    <text x="134" y="200">timeout de un QTimer</text>
+    <rect x="40" y="220" width="188" height="30" rx="5" fill="#ffffff" stroke="#9ca3af"/>
+    <text x="134" y="240">señal desde otro thread</text>
+  </g>
+
+  <!-- Event loop -->
+  <circle cx="400" cy="160" r="70" fill="#dbeafe" stroke="#2563eb" stroke-width="3"/>
+  <text x="400" y="154" font-size="16" font-weight="bold" fill="#1e3a8a" text-anchor="middle">Event loop</text>
+  <text x="400" y="176" font-size="14" font-family="DejaVu Sans Mono, monospace" fill="#1e3a8a" text-anchor="middle">app.exec()</text>
+  <text x="400" y="78" font-size="13" fill="#2563eb" text-anchor="middle">(thread principal)</text>
+
+  <!-- Slot -->
+  <rect x="556" y="100" width="180" height="120" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+  <text x="646" y="128" font-size="15" font-weight="bold" fill="#064e3b" text-anchor="middle">Slot conectado</text>
+  <text x="646" y="160" font-size="13" font-family="DejaVu Sans Mono, monospace" fill="#064e3b" text-anchor="middle">contar_click()</text>
+  <text x="646" y="186" font-size="13" fill="#064e3b" text-anchor="middle">repintar la ventana</text>
+
+  <!-- Flechas -->
+  <g stroke="#374151" stroke-width="2" fill="none">
+    <line x1="246" y1="160" x2="326" y2="160" marker-end="url(#flecha)"/>
+    <line x1="472" y1="160" x2="552" y2="160" marker-end="url(#flecha)"/>
+    <path d="M646,222 L646,290 L400,290 L400,234" marker-end="url(#flecha)"/>
+  </g>
+  <g font-size="13" fill="#374151" text-anchor="middle">
+    <text x="286" y="150">1. saca uno</text>
+    <text x="514" y="150">2. lo ejecuta</text>
+    <text x="523" y="282">3. al terminar, busca otro</text>
+  </g>
+
+  <!-- Advertencia -->
+  <rect x="24" y="308" width="712" height="62" rx="8" fill="#fee2e2" stroke="#b91c1c" stroke-width="1.5"/>
+  <g font-size="14" fill="#7f1d1d">
+    <text x="40" y="334">Si un slot tarda 5 segundos (sleep, recv, un cálculo largo), el event loop no puede</text>
+    <text x="40" y="356">volver por más eventos: la ventana no responde ni se redibuja. La GUI se «congela».</text>
+  </g>
+</svg>
